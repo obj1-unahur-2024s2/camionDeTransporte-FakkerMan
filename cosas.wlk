@@ -5,6 +5,7 @@ object cosas {
 object knight_rider{
     method peso() = 500
     method peligrosidad() = 15
+    method bultos() = 1
 }
 
 object bumblebee {
@@ -23,11 +24,13 @@ object bumblebee {
     method trasnformar() {
         estaTransformadoEnRobot = not estaTransformadoEnRobot
     }
+
+    method bultos() = 2
 }
 
 object paqueteDeLadrillos {
-    var peso = 2
-
+    var property cantidad = 0
+    method peso()= 2 * cantidad
     method peligrosidad() = 2
     
     method cantidadDeLadrillos(numero) {
@@ -38,6 +41,7 @@ object paqueteDeLadrillos {
 object arenaAGranel {
     var property peso = 0 
     method peligrosidad() = 1
+    method bultos() = 1
 }
 
 object bateriaAntiaerea {
@@ -75,16 +79,18 @@ object contenedor {
 object residuos {
     var property peso = 0
     method peligrosidad() = 200 
+    method bultos() = 1
 }
 
 object embalajeDeSeguridad {
-    var property  cosaEnvuelta = cosaEnvuelta
+    var property  cosaEnvuelta = cosaEnVuelta
     method peso() = cosaEnvuelta.peso()
     method peligrosidad() = cosaEnvuelta.peligrosidad() 
+    method bultos() = 2
       
 }
 
-object cosaEnvuelta {
+object cosaEnVuelta {
     method peso() = 0
     method peligrosidad() = 0   
 }
